@@ -12,17 +12,16 @@ import com.silkroadpacific.loremy.R;
 
 import java.util.Map;
 
-
-public class OutletFragment extends Fragment {
+public class UserFragment extends Fragment {
 
     private String[] params;
 
     private OnFragmentInteractionListener mListener;
 
-    public OutletFragment() {}
+    public UserFragment() {}
 
-    public static OutletFragment newInstance(Map<String, String> params) {
-        OutletFragment fragment = new OutletFragment();
+    public static UserFragment newInstance(Map<String, String> params) {
+        UserFragment fragment = new UserFragment();
         Bundle args = new Bundle();
         for(String sk: params.keySet()) args.putString(sk, params.get(sk));
         fragment.setArguments(args);
@@ -41,11 +40,12 @@ public class OutletFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_outlet, container, false);
+        View v = inflater.inflate(R.layout.fragment_user, container, false);
 
         return v;
     }
 
+    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -68,6 +68,7 @@ public class OutletFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);

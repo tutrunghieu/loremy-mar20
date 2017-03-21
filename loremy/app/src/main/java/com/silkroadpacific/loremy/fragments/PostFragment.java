@@ -12,17 +12,19 @@ import com.silkroadpacific.loremy.R;
 
 import java.util.Map;
 
-
-public class OutletFragment extends Fragment {
+public class PostFragment extends Fragment {
 
     private String[] params;
 
+
     private OnFragmentInteractionListener mListener;
 
-    public OutletFragment() {}
+    public PostFragment() {
+        // Required empty public constructor
+    }
 
-    public static OutletFragment newInstance(Map<String, String> params) {
-        OutletFragment fragment = new OutletFragment();
+    public static PostFragment newInstance(Map<String, String> params) {
+        PostFragment fragment = new PostFragment();
         Bundle args = new Bundle();
         for(String sk: params.keySet()) args.putString(sk, params.get(sk));
         fragment.setArguments(args);
@@ -41,7 +43,7 @@ public class OutletFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_outlet, container, false);
+        View v = inflater.inflate(R.layout.fragment_post, container, false);
 
         return v;
     }
