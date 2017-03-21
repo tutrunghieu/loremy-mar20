@@ -1,7 +1,5 @@
 package com.silkroadpacific.loremy.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,11 +10,13 @@ import com.silkroadpacific.loremy.R;
 
 import java.util.Map;
 
-public class UserFragment extends Fragment {
+public class UserFragment extends Fragment implements View.OnClickListener {
 
     private String[] params;
 
-    public UserFragment() {}
+    public UserFragment() {
+
+    }
 
     public static UserFragment newInstance(Map<String, String> params) {
         UserFragment fragment = new UserFragment();
@@ -43,4 +43,8 @@ public class UserFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

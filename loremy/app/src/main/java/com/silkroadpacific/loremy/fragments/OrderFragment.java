@@ -11,7 +11,7 @@ import com.silkroadpacific.loremy.R;
 import java.util.Map;
 
 
-public class OrderFragment extends Fragment {
+public class OrderFragment extends Fragment implements View.OnClickListener{
 
     private String[] params;
 
@@ -44,4 +44,8 @@ public class OrderFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

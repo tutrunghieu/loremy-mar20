@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        for (int i = 0; i < navigation.getMenu().size(); i++) {
+        /*for (int i = 0; i < navigation.getMenu().size(); i++) {
             MenuItem menuItem = navigation.getMenu().getItem(i);
             menuItem.setChecked(menuItem.getItemId() == item.getItemId());
-        }
+        }*/
 
         if (frag != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

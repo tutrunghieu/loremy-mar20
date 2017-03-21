@@ -1,5 +1,6 @@
 package com.silkroadpacific.loremy.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,9 +16,11 @@ import com.silkroadpacific.loremy.R;
 import java.util.Map;
 
 
-public class MenuFragment extends Fragment {
+public class MenuFragment extends Fragment implements View.OnClickListener {
 
     private String[] params;
+
+    public Button btnDetails;
 
     public MenuFragment() {}
 
@@ -42,17 +45,19 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_menu, container, false);
+        BaseFragment.bindId(this, v);
 
-        Button btnDetails = (Button) v.findViewById(R.id.btnDetails);
-        btnDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MenuDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+        //Button btnDetails = (Button) v.findViewById(R.id.btnDetails);
 
         return v;
     }
 
+
+    @Override
+    public void onClick(View v) {
+        if(v == btnDetails) {
+            Intent intent = new Intent(getActivity(), MenuDetailActivity.class);
+            startActivity(intent);
+        }
+    }
 }
