@@ -7,6 +7,7 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,6 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static String TAG = "MainActivity";
 
     private static final String SELECTED_ITEM = "arg_selected_item";
     private Toolbar toolbarHome;
@@ -75,44 +78,48 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        MenuItem homeItem = navigation.getMenu().getItem(0);
-        if (mSelectedItem != homeItem.getItemId()) {
-            selectFragment(homeItem);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     private void selectFragment(MenuItem item) {
         Fragment frag = null;
         Map<String, String> params = new HashMap<>();
-
+        FragmentManager manager = getSupportFragmentManager();
+        String tag = "";
         switch (item.getItemId()) {
             case R.id.nav_menu:
                 getSupportActionBar().setTitle(R.string.nav_menu);
-                frag = MenuFragment.newInstance(params);
+                tag = MenuFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = MenuFragment.newInstance(params);
                 break;
             case R.id.nav_order:
                 getSupportActionBar().setTitle(R.string.nav_order);
-                frag = OrderFragment.newInstance(params);
+                tag = OrderFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = OrderFragment.newInstance(params);
                 break;
             case R.id.nav_outlet:
                 getSupportActionBar().setTitle(R.string.nav_outlet);
-                frag = OutletFragment.newInstance(params);
+                tag = OutletFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = OutletFragment.newInstance(params);
                 break;
             case R.id.nav_post:
                 getSupportActionBar().setTitle(R.string.nav_post);
-                frag = PostFragment.newInstance(params);
+                tag = PostFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = PostFragment.newInstance(params);
                 break;
             case R.id.nav_profile:
                 getSupportActionBar().setTitle(R.string.nav_profile);
-                frag = UserFragment.newInstance(params);
+                tag = UserFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = UserFragment.newInstance(params);
                 break;
             default:
                 getSupportActionBar().setTitle(R.string.nav_menu);
-                frag = MenuFragment.newInstance(params);
+                tag = MenuFragment.class.getSimpleName();
+                frag = manager.findFragmentByTag(tag);
+                if(frag == null) frag = MenuFragment.newInstance(params);
                 break;
         }
 
@@ -122,8 +129,9 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         if (frag != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.content, frag, frag.getTag());
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.replace(R.id.content, frag);
+            ft.addToBackStack(tag);
             ft.commit();
         }
     }

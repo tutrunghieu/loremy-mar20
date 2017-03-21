@@ -22,7 +22,7 @@ public class BaseFragment {
                 View vk = (View) mk.invoke(parent, id);
                 fk.set(ik, vk);
             } catch (Exception e) {
-                e.printStackTrace();
+
             }
         }
     }
