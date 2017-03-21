@@ -21,6 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuDetailActivity"></activity>
+        <activity android:name=".OrderHistoryActivity"></activity>
+        <activity android:name=".OutletDetailActivity"></activity>
+        <activity android:name=".PostDetailActivity"></activity>
+        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>

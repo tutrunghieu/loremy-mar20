@@ -28,12 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbarHome;
     private FrameLayout content;
 
-    private MenuFragment menuFragment;
-    private OrderFragment orderFragment;
-    private OutletFragment outletFragment;
-    private PostFragment postFragment;
-    private UserFragment userFragment;
-
     private BottomNavigationView.OnNavigationItemSelectedListener onItemSelected
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         Fragment frag = null;
@@ -44,32 +38,32 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_menu:
                     getSupportActionBar().setTitle(R.string.nav_menu);
                     frag = MenuFragment.newInstance(params);
-                    return true;
+                    break;
                 case R.id.nav_order:
                     getSupportActionBar().setTitle(R.string.nav_order);
                     frag = OrderFragment.newInstance(params);
-                    return true;
+                    break;
                 case R.id.nav_outlet:
                     getSupportActionBar().setTitle(R.string.nav_outlet);
-                    frag = PostFragment.newInstance(params);
-                    return true;
+                    frag = OutletFragment.newInstance(params);
+                    break;
                 case R.id.nav_post:
                     getSupportActionBar().setTitle(R.string.nav_post);
-                    frag = MenuFragment.newInstance(params);
-                    return true;
+                    frag = PostFragment.newInstance(params);
+                    break;
                 case R.id.nav_profile:
                     getSupportActionBar().setTitle(R.string.nav_profile);
-                    frag = MenuFragment.newInstance(params);
-                    return true;
+                    frag = UserFragment.newInstance(params);
+                    break;
             }
 
             if (frag != null) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.add(R.id.container, frag, frag.getTag());
+                ft.add(R.id.content, frag, frag.getTag());
                 ft.commit();
             }
 
-            return false;
+            return true;
         }
 
     };
