@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">loremy</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_menu">Menu</string>
+    <string name="nav_order">Order</string>
+    <string name="nav_outlet">Outlet</string>
+    <string name="nav_post">Post</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
