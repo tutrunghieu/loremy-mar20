@@ -1,4 +1,4 @@
-package com.silkroadpacific.loremy;
+package com.silkroadpacific.loremy.gui;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -16,11 +16,12 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.silkroadpacific.loremy.fragments.MenuFragment;
-import com.silkroadpacific.loremy.fragments.OrderFragment;
-import com.silkroadpacific.loremy.fragments.OutletFragment;
-import com.silkroadpacific.loremy.fragments.PostFragment;
-import com.silkroadpacific.loremy.fragments.UserFragment;
+import com.silkroadpacific.loremy.R;
+import com.silkroadpacific.loremy.gui.menu.MenuFragment;
+import com.silkroadpacific.loremy.gui.order.OrderFragment;
+import com.silkroadpacific.loremy.gui.outlet.OutletFragment;
+import com.silkroadpacific.loremy.gui.post.PostFragment;
+import com.silkroadpacific.loremy.gui.user.UserFragment;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

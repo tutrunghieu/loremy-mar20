@@ -1,14 +1,65 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnTren1"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_centerInParent="true"
+            android:text="Trên Phải"/>
+
+        <Button
+            android:id="@+id/btnTren2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_centerInParent="true"
+            android:text="Trên Trái"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <Button
-        android:id="@+id/btnDetails"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnDuoi1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_centerInParent="true"
+        android:text="Dưới Trái"/>
+
+    <Button
+        android:id="@+id/btnDuoi2"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_centerInParent="true"
-        android:text="Open Order"/>
+        android:text="Dưới Giữa"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnDuoi3"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_centerInParent="true"
+        android:text="Dưới Phải"/>
+
+    </LinearLayout>
+
+</LinearLayout>

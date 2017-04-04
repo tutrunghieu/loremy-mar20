@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".gui.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,11 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuDetailActivity"></activity>
-        <activity android:name=".OrderHistoryActivity"></activity>
-        <activity android:name=".OutletDetailActivity"></activity>
-        <activity android:name=".PostDetailActivity"></activity>
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".gui.menu.MenuDetailActivity"></activity>
+        <activity android:name=".gui.order.OrderHistoryActivity"></activity>
+        <activity android:name=".gui.outlet.OutletDetailActivity"></activity>
+        <activity android:name=".gui.post.PostDetailActivity"></activity>
+        <activity android:name=".gui.user.UserActivity"></activity>
     </application>
 
 </manifest>

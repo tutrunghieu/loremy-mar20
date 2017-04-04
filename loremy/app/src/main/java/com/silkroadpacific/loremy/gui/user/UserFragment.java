@@ -1,7 +1,5 @@
-package com.silkroadpacific.loremy.fragments;
+package com.silkroadpacific.loremy.gui.user;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,15 +10,16 @@ import com.silkroadpacific.loremy.R;
 
 import java.util.Map;
 
-
-public class OutletFragment extends Fragment implements View.OnClickListener{
+public class UserFragment extends Fragment implements View.OnClickListener {
 
     private String[] params;
 
-    public OutletFragment() {}
+    public UserFragment() {
 
-    public static OutletFragment newInstance(Map<String, String> params) {
-        OutletFragment fragment = new OutletFragment();
+    }
+
+    public static UserFragment newInstance(Map<String, String> params) {
+        UserFragment fragment = new UserFragment();
         Bundle args = new Bundle();
         for(String sk: params.keySet()) args.putString(sk, params.get(sk));
         fragment.setArguments(args);
@@ -39,7 +38,7 @@ public class OutletFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_outlet, container, false);
+        View v = inflater.inflate(R.layout.fragment_user, container, false);
 
         return v;
     }

@@ -1,4 +1,4 @@
-package com.silkroadpacific.loremy.fragments;
+package com.silkroadpacific.loremy.gui.post;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,15 +10,16 @@ import com.silkroadpacific.loremy.R;
 
 import java.util.Map;
 
-
-public class OrderFragment extends Fragment implements View.OnClickListener{
+public class PostFragment extends Fragment implements View.OnClickListener {
 
     private String[] params;
 
-    public OrderFragment() {}
+    public PostFragment() {
+        // Required empty public constructor
+    }
 
-    public static OrderFragment newInstance(Map<String, String> params) {
-        OrderFragment fragment = new OrderFragment();
+    public static PostFragment newInstance(Map<String, String> params) {
+        PostFragment fragment = new PostFragment();
         Bundle args = new Bundle();
         for(String sk: params.keySet()) args.putString(sk, params.get(sk));
         fragment.setArguments(args);
@@ -37,9 +38,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_order, container, false);
-
-
+        View v = inflater.inflate(R.layout.fragment_post, container, false);
 
         return v;
     }

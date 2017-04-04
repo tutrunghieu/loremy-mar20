@@ -1,9 +1,11 @@
-package com.silkroadpacific.loremy;
+package com.silkroadpacific.loremy.gui.order;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.silkroadpacific.loremy.R;
 
 public class OrderHistoryActivity extends AppCompatActivity {
 
