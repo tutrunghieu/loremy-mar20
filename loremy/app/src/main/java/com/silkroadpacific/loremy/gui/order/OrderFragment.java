@@ -88,6 +88,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
 
     @OnClick(R.id.btnTren2)
     public void onBtnTren2Clicked() {
+
     }
 
     @OnClick(R.id.btnDuoi1)
@@ -102,7 +103,7 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
     public void onBtnDuoi3Clicked() {
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main1(String[] args) throws Exception{
         for(Field fj: R.id.class.getFields())
         if(fj.getName().startsWith("btn"))
         {
