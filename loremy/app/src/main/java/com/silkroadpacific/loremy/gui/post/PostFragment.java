@@ -1,21 +1,23 @@
 package com.silkroadpacific.loremy.gui.post;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.silkroadpacific.loremy.R;
-import com.silkroadpacific.loremy.gui.BaseFragment;
+import com.silkroadpacific.loremy.gui.common.BaseFragment;
 import com.silkroadpacific.loremy.physical.Tab_Post;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class PostFragment extends Fragment implements View.OnClickListener {
+public class PostFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private String[] params;
     private PostAdapter adapter;
@@ -49,20 +51,30 @@ public class PostFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_post, container, false);
         BaseFragment.bindId(this, v);
+
+        adapter = new PostAdapter(getActivity(), R.layout.item_post, findPosts());
+        listPost.setAdapter(adapter);
+        listPost.setOnItemClickListener(this);
+
+        return v;
+    }
+
+    private List<Tab_Post> findPosts()
+    {
         posts = new ArrayList<>();
         for(int i = 0; i < 8; i++)
         {
             posts.add(new Tab_Post());
         }
 
-        adapter = new PostAdapter(getActivity(), R.layout.item_post, posts);
-        listPost.setAdapter(adapter);
-
-        return v;
+        return posts;
     }
 
     @Override
-    public void onClick(View v) {
-
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+    {
+        Intent intent = new Intent(getActivity(), PostDetailActivity.class);
+        intent.putExtra("parent", i + "/" + l);
+        startActivity(intent);
     }
 }

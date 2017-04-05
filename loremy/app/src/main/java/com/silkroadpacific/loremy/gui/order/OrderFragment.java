@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.silkroadpacific.loremy.R;
-import com.silkroadpacific.loremy.gui.BaseFragment;
+import com.silkroadpacific.loremy.gui.common.BaseFragment;
 
 import java.lang.reflect.Field;
 import java.util.Map;

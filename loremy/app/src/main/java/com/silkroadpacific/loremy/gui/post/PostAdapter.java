@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
+import com.silkroadpacific.loremy.R;
 import com.silkroadpacific.loremy.physical.Tab_Post;
 import com.silkroadpacific.loremy.physical.Tab_Product;
 
@@ -38,6 +40,10 @@ public class PostAdapter extends ArrayAdapter<Tab_Post> {
         if (convertView == null) {
             convertView = inflater.inflate(layout, null);
         }
+
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
+
+        tvTitle.setText(posts.get(position).toString());
 
         return convertView;
     }

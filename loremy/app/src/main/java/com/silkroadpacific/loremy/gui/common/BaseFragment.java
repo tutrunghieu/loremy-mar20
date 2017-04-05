@@ -1,4 +1,4 @@
-package com.silkroadpacific.loremy.gui;
+package com.silkroadpacific.loremy.gui.common;
 
 import android.app.Fragment;
 import android.view.View;

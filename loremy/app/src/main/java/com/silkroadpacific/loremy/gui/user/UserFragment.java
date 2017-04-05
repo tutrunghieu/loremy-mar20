@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.silkroadpacific.loremy.R;
 
@@ -39,6 +41,18 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_user, container, false);
+
+        LinearLayout ll = (LinearLayout)v.findViewById(R.id.layout_user);
+
+        for(int k=0; k<100; k++)
+        {
+            Button btn = new Button(getActivity());
+            btn.setText("Button " + k);
+            btn.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+            ll.addView(btn);
+        }
 
         return v;
     }

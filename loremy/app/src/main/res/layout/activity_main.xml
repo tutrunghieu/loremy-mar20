@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.silkroadpacific.loremy.gui.MainActivity">
+    tools:context="com.silkroadpacific.loremy.gui.common.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.silkroadpacific.loremy.R;
+import com.silkroadpacific.loremy.gui.common.GUI;
 
 public class MenuDetailActivity extends AppCompatActivity {
 
@@ -17,7 +18,12 @@ public class MenuDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Bundle b = getIntent().getExtras();
+        String s = (String)b.get("parent");
+
+        GUI.msg(s, this);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

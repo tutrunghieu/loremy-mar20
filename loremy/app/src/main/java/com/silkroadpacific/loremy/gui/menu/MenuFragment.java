@@ -8,11 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.silkroadpacific.loremy.R;
-import com.silkroadpacific.loremy.gui.BaseFragment;
+import com.silkroadpacific.loremy.gui.common.BaseFragment;
 import com.silkroadpacific.loremy.physical.Tab_Product;
 
 import java.util.ArrayList;
@@ -20,7 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 
-public class MenuFragment extends Fragment implements View.OnClickListener {
+public class MenuFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener
+{
 
     private String[] params;
     private MenuAdapter adapter;
@@ -65,17 +64,16 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         adapter = new MenuAdapter(getActivity(), R.layout.item_menu, products);
         gridMenu.setAdapter(adapter);
 
-        gridMenu.setOnItemClickListener(new MenuItemClick());
+        gridMenu.setOnItemClickListener(this);
 
         return v;
     }
 
-    class MenuItemClick implements AdapterView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(getActivity(), MenuDetailActivity.class);
-            startActivity(intent);
-        }
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    {
+        Intent intent = new Intent(getActivity(), MenuDetailActivity.class);
+        intent.putExtra("parent", position + "/" + id);
+        startActivity(intent);
     }
 
     @Override

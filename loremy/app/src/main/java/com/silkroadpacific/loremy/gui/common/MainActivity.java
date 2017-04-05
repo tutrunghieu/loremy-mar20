@@ -1,4 +1,4 @@
-package com.silkroadpacific.loremy.gui;
+package com.silkroadpacific.loremy.gui.common;
 
 import android.os.Build;
 import android.os.Bundle;
