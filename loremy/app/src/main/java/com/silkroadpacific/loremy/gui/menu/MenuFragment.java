@@ -1,5 +1,6 @@
 package com.silkroadpacific.loremy.gui.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -64,22 +65,22 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         adapter = new MenuAdapter(getActivity(), R.layout.item_menu, products);
         gridMenu.setAdapter(adapter);
 
-        gridMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(getActivity(),
-                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        gridMenu.setOnItemClickListener(new MenuItemClick());
 
         return v;
     }
 
-
+    class MenuItemClick implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(getActivity(), MenuDetailActivity.class);
+            startActivity(intent);
+        }
+    }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
 
     }
 
