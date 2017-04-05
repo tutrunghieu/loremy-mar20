@@ -5,14 +5,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.silkroadpacific.loremy.R;
+import com.silkroadpacific.loremy.gui.BaseFragment;
+import com.silkroadpacific.loremy.physical.Tab_Post;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class PostFragment extends Fragment implements View.OnClickListener {
 
     private String[] params;
+    private PostAdapter adapter;
+    private List<Tab_Post> posts;
+
+    public ListView listPost;
 
     public PostFragment() {
         // Required empty public constructor
@@ -39,6 +48,15 @@ public class PostFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_post, container, false);
+        BaseFragment.bindId(this, v);
+        posts = new ArrayList<>();
+        for(int i = 0; i < 8; i++)
+        {
+            posts.add(new Tab_Post());
+        }
+
+        adapter = new PostAdapter(getActivity(), R.layout.item_post, posts);
+        listPost.setAdapter(adapter);
 
         return v;
     }
